@@ -12,6 +12,10 @@ const { users, scores, inventories } = require('./models');
 app.get('/login', (req, res) => {
     res.render('login')
 })
+
+app.get('/register', (req, res) => {
+    res.render('register')
+})
 // -----------------------------------------------------------------------------------------------------
 port = 3000
 app.listen(port, console.log(`Server is running on port ${port}`));
