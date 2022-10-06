@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "db:up": "npx sequelize db:migrate",
-    "db:down": "npx sequelize db:migrate:undo:all"
+    "db:up": "npx sequelize db:migrate && npx sequelize db:seed:all",
+    "db:down": "npx sequelize db:seed:undo:all && npx sequelize db:migrate:undo:all"
   },
   "repository": {
     "type": "git",
