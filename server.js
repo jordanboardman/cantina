@@ -24,6 +24,10 @@ app.get('/shop', (req, res) => {
 app.get('/brew', (req, res) => {
     res.render('brew')
 })
+
+app.get('/simulate', (req, res) => {
+    res.render('simulate')
+})
 // -----------------------------------------------------------------------------------------------------
 port = 3000
 app.listen(port, console.log(`Server is running on port ${port}`));
