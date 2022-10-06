@@ -9,7 +9,9 @@ const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize('postgres://postgres@localhost:5432/cantina');
 const { users, scores, inventories } = require('./models');
 // -----------------------------------------------------------------------------------------------------
-
+app.get('/login', (req, res) => {
+    res.render('login')
+})
 // -----------------------------------------------------------------------------------------------------
 port = 3000
 app.listen(port, console.log(`Server is running on port ${port}`));
