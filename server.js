@@ -32,6 +32,10 @@ app.get('/simulate', (req, res) => {
 app.get('/results', (req, res) => {
     res.render('results')
 })
+
+app.get('/tutorial', (req, res) => {
+    res.render('tutorial')
+})
 // -----------------------------------------------------------------------------------------------------
 port = 3000
 app.listen(port, console.log(`Server is running on port ${port}`));
