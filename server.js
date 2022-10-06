@@ -20,6 +20,10 @@ app.get('/register', (req, res) => {
 app.get('/shop', (req, res) => {
     res.render('shop')
 })
+
+app.get('/brew', (req, res) => {
+    res.render('brew')
+})
 // -----------------------------------------------------------------------------------------------------
 port = 3000
 app.listen(port, console.log(`Server is running on port ${port}`));
