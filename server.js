@@ -28,6 +28,10 @@ app.get('/brew', (req, res) => {
 app.get('/simulate', (req, res) => {
     res.render('simulate')
 })
+
+app.get('/results', (req, res) => {
+    res.render('results')
+})
 // -----------------------------------------------------------------------------------------------------
 port = 3000
 app.listen(port, console.log(`Server is running on port ${port}`));
