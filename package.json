@@ -1,0 +1,34 @@
+{
+  "name": "cantina",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "db:up": "npx sequelize db:migrate && npx sequelize db:seed:all",
+    "db:down": "npx sequelize db:seed:undo:all && npx sequelize db:migrate:undo:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgerodriguez860/cantina.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jorgerodriguez860/cantina/issues"
+  },
+  "homepage": "https://github.com/jorgerodriguez860/cantina#readme",
+  "dependencies": {
+    "axios": "^1.0.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "pg": "^8.8.0",
+    "sequelize": "^6.24.0",
+    "sqlite3": "^5.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.5.1"
+  }
+}
