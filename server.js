@@ -34,6 +34,14 @@ app.get('/brew', (req, res) => {
 app.get('/simulate', (req, res) => {
     res.render('simulate')
 })
+
+app.get('/results', (req, res) => {
+    res.render('results')
+})
+
+app.get('/tutorial', (req, res) => {
+    res.render('tutorial')
+})
 // --------------------------------------------------
 // Table endpoints
 
