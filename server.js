@@ -1,6 +1,7 @@
 // Packages
 
 const express = require('express');
+const bodyParser = require('body-parser')
 const app = express();
 app.use(express.json());
 const ejs = require('ejs');
@@ -11,17 +12,35 @@ const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize('postgres://postgres@localhost:5432/cantina');
 const { users, scores, inventories } = require('./models');
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }))
 // -----------------------------------------------------------------------------------------------------
 // Global Variables
 
-let username = 'user1';
+let username = '';
 // -----------------------------------------------------------------------------------------------------
 // HTTP requests
 
 // Page enpoints
 
-app.get('/login', (req, res) => {
+app.get('/', (req, res) => {
     res.render('login')
+})
+
+app.post('/userlogin', async (req, res) => {
+    let user = await users.findOne({
+        where: {
+            username: req.body.username
+        }
+    })
+
+    if (req.body.password === user.password) {
+        res.redirect('/shop')
+        username = req.body.username
+    }
+
+    else {
+        res.redirect('/')
+    }
 })
 
 app.get('/register', (req, res) => {
