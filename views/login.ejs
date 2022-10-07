@@ -9,12 +9,12 @@
 </head>
 <body>
     <div class="forms"><h2>LOG-IN</h2>
-        <form><div class="forms">
-            <label for="username">Username: </label>
-            <input type="text" name="username"><br>
-            <label for="password">Password:  </label>
-            <input type="text" name="password"><br>
-            <input type="submit" name="submit" class="formsubmit">
+        <form action="/userlogin" method="post"><div class="forms">
+            <% {%>
+            Username: <input type="text" name="username" /><br>
+            Password: <input type="text" name="password" /><br>
+            <input type="submit" value="accept" class="formsubmit">
+            <%} %>
         </div></form>
     </div>
 </body>
