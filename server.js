@@ -13,6 +13,7 @@ const { users, scores, inventories } = require('./models');
 app.use(express.static('public'));
 // -----------------------------------------------------------------------------------------------------
 // Global Variables
+
 let username = 'user1';
 // -----------------------------------------------------------------------------------------------------
 // HTTP requests
@@ -37,8 +38,14 @@ app.get('/shop', async (req, res) => {
     res.render('shop', {inv})
 })
 
-app.get('/brew', (req, res) => {
-    res.render('brew')
+app.get('/brew', async (req, res) => {
+    let inv = await inventories.findOne({
+        where: {
+            username: username
+        }
+    })
+
+    res.render('brew', {inv})
 })
 
 app.get('/simulate', (req, res) => {
