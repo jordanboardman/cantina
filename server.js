@@ -8,6 +8,7 @@ const axios = require('axios').default;
 const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize('postgres://postgres@localhost:5432/cantina');
 const { users, scores, inventories } = require('./models');
+app.use(express.static(__dirname + 'public'));
 // -----------------------------------------------------------------------------------------------------
 app.get('/login', (req, res) => {
     res.render('login')
