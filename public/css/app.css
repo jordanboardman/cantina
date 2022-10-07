@@ -1,16 +1,10 @@
-#login {
+.forms {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#loginform {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-#loginsubmit {
+.formsubmit {
     width: 75px;
     align-self: center;
 }
