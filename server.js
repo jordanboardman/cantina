@@ -12,7 +12,9 @@ const sequelize = new Sequelize('postgres://postgres@localhost:5432/cantina');
 const { users, scores, inventories } = require('./models');
 app.use(express.static('public'));
 // -----------------------------------------------------------------------------------------------------
-
+// Global Variables
+let username = 'user1';
+// -----------------------------------------------------------------------------------------------------
 // HTTP requests
 
 // Page enpoints
@@ -25,8 +27,14 @@ app.get('/register', (req, res) => {
     res.render('register')
 })
 
-app.get('/shop', (req, res) => {
-    res.render('shop')
+app.get('/shop', async (req, res) => {
+    let inv = await inventories.findOne({
+        where: {
+            username: username
+        }
+    })
+
+    res.render('shop', {inv})
 })
 
 app.get('/brew', (req, res) => {
