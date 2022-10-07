@@ -1,7 +1,7 @@
 // Packages
 
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const app = express();
 app.use(express.json());
 const ejs = require('ejs');
@@ -12,7 +12,7 @@ const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize('postgres://postgres@localhost:5432/cantina');
 const { users, scores, inventories } = require('./models');
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 // -----------------------------------------------------------------------------------------------------
 // Global Variables
 
@@ -45,6 +45,16 @@ app.post('/userlogin', async (req, res) => {
 
 app.get('/register', (req, res) => {
     res.render('register')
+})
+
+app.post('/newuser', async (req, res) => {
+    if (req.body.password === req.body.confirmpass) {
+        users.create({
+            username: req.body.username,
+            password: req.body.password
+        })
+    }
+    res.redirect('/')
 })
 
 app.get('/shop', async (req, res) => {
