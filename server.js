@@ -46,8 +46,14 @@ app.get('/tutorial', (req, res) => {
 // Table endpoints
 
 app.get('/users', async (req, res) => {
-    const people = await users.findAll()
-    res.send(people)
+    if(Object.keys(req.body).length != 0) { // if the request has a body, send error
+        res.statusCode = 400
+        res.send('GET requests should not have a body.')
+    }
+    else {
+        const people = await users.findAll()
+        res.send(people)
+    }
 })
 
 app.get('/scores', async (req, res) => {
