@@ -1,16 +1,17 @@
 // Packages
 
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
-app.use(express.json());
+const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
 const ejs = require('ejs');
 const { render } = require('ejs');
-app.set('view engine', 'ejs');
 const axios = require('axios').default;
 const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize('postgres://postgres@localhost:5432/cantina');
 const { users, scores, inventories } = require('./models');
+app.set('view engine', 'ejs');
+app.use(express.json());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 // -----------------------------------------------------------------------------------------------------
@@ -33,7 +34,7 @@ app.post('/userlogin', async (req, res) => {
         }
     })
 
-    if (req.body.password === user.password) {
+    if (bcrypt.compare(req.body.password, user.password)) {
         res.redirect('/shop')
         username = req.body.username
     }
@@ -49,9 +50,10 @@ app.get('/register', (req, res) => {
 
 app.post('/newuser', async (req, res) => {
     if (req.body.password === req.body.confirmpass) {
+        const hash = await bcrypt.hash(req.body.password, 8)
         users.create({
             username: req.body.username,
-            password: req.body.password
+            password: hash
         })
     }
     res.redirect('/')
