@@ -9,14 +9,13 @@
 </head>
 <body>
     <div class="forms"><h2>REGISTER</h2>
-        <form><div class="forms">
-            <label for="username">Username: </label>
-            <input type="text" name="username"><br>
-            <label for="password">Password:  </label>
-            <input type="text" name="password"><br>
-            <label for="confirmpass">Confirm Password:  </label>
-            <input type="text" name="confirmpass"><br>
+        <form action="/newuser" method="post"><div class="forms">
+            <% { %>
+            Username: <input type="text" name="username"><br>
+            Password: <input type="text" name="password"><br>
+            Confirm Password: <input type="text" name="confirmpass"><br>
             <input type="submit" name="submit" class="formsubmit">
+            <% } %>
         </div></form>
     </div>
 </body>
