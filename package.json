@@ -7,7 +7,8 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:up": "npx sequelize db:migrate && npx sequelize db:seed:all",
-    "db:down": "npx sequelize db:seed:undo:all && npx sequelize db:migrate:undo:all"
+    "db:down": "npx sequelize db:seed:undo:all && npx sequelize db:migrate:undo:all",
+    "build": "sequelize-cli db:migrate"
   },
   "repository": {
     "type": "git",
