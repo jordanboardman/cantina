@@ -25,7 +25,6 @@
     "database": "de1pr5u47mal03",
     "host": "ec2-54-159-22-90.compute-1.amazonaws.com",
     "dialect": "postgres",
-    "use_env_variable": "DATABASE_URL",
     "dialectOptions": {
       "ssl": {
         "require": true,
