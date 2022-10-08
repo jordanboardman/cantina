@@ -55,7 +55,7 @@ app.post('/newuser', async (req, res) => {
         })
         inventories.create({
             username: req.body.username,
-            day: 0,
+            day: 1,
             veax: 0,
             mozuc: 0,
             zeyoc: 0,
