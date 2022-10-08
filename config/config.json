@@ -10,7 +10,7 @@
     "username": "mzjvwrdjfahgts",
     "password": "4c2e731567d72862ca88878a732e882ba878c92e24b62fb46b1ecfb6721f9fab",
     "database": "de1pr5u47mal03",
-    "host": "127.0.0.1",
+    "host": "ec2-54-159-22-90.compute-1.amazonaws.com",
     "dialect": "postgres",
     "dialectOptions": {
       "ssl": {
@@ -23,7 +23,7 @@
     "username": "mzjvwrdjfahgts",
     "password": "4c2e731567d72862ca88878a732e882ba878c92e24b62fb46b1ecfb6721f9fab",
     "database": "de1pr5u47mal03",
-    "host": "127.0.0.1",
+    "host": "ec2-54-159-22-90.compute-1.amazonaws.com",
     "dialect": "postgres",
     "use_env_variable": "DATABASE_URL",
     "dialectOptions": {
