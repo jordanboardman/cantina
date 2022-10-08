@@ -53,6 +53,16 @@ app.post('/newuser', async (req, res) => {
             username: req.body.username,
             password: req.body.password
         })
+        inventories.create({
+            username: req.body.username,
+            day: 0,
+            veax: 0,
+            mozuc: 0,
+            zeyoc: 0,
+            gloop: 0,
+            spanu: 0,
+            credits: 2000
+        })
     }
     res.redirect('/')
 })
