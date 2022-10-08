@@ -1,11 +1,19 @@
 .forms {
     display: flex;
     flex-direction: column;
+    align-self: center;
     align-items: center;
 }
 
+.loginbody {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .formsubmit {
-    width: 75px;
+    width: 65px;
     align-self: center;
 }
 
@@ -18,4 +26,10 @@
 .inventory p{
     margin: 3px;
     border: 3px;
+}
+
+#register {
+    position: absolute;
+    right: 5%;
+    top: 5%;
 }

@@ -8,14 +8,21 @@
     <title>Login Page</title>
 </head>
 <body>
-    <div class="forms"><h2>LOG-IN</h2>
-        <form action="/userlogin" method="post"><div class="forms">
-            <% { %>
-            Username: <input type="text" name="username" /><br>
-            Password: <input type="text" name="password" /><br>
-            <input type="submit" class="formsubmit">
-            <% } %>
-        </div></form>
+    <div class="loginbody">
+        <div>
+            <a href="/register"><button id="register">Register</button></a>
+        </div>
+        <div class="loginformbody">
+            <div class="forms"><h2>LOG-IN</h2>
+                <form action="/userlogin" method="post"><div class="forms">
+                    <% { %>
+                    Username: <input type="text" name="username" /><br>
+                    Password: <input type="text" name="password" /><br>
+                    <input type="submit" class="formsubmit">
+                    <% } %>
+                </div></form>
+            </div>
+        </div>
     </div>
 </body>
 </html>
