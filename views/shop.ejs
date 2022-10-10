@@ -29,30 +29,45 @@
         <div id="storefront">
             <div id="mixers">
                 <div class="ingredient" id="veax-spice">
-                    <div class="buy-ingredient">Buy V'eax spice</div>
-                    <button class="buy-button" id="buy-veax">$</button>
+                    <form action="/buyveax" method="post"><div>
+                        <% { %>
+                            Buy V'eax spice: <input type="submit" class="buy-button" id="buy-veax" value="$">
+                        <% } %>
+                    </div></form>
                 </div>
 
                 <div class="ingredient" id="mozuc-concentrate">
-                    <div class="buy-ingredient">Buy Mozuc Concentrate</div>
-                    <button class="buy-button" id="buy-mozuc">$</button>
+                    <form action="/buymozuc" method="post"><div>
+                        <% { %>
+                            Buy Mozuc Concentrate: <input type="submit" class="buy-button" id="buy-mozuc" value="$">
+                        <% } %>
+                    </div></form>
                 </div>
 
-                <div class="ingredient" id="zeyok-peel">
-                    <div class="buy-ingredient">Buy Ze'yok Peel</div>
-                    <button class="buy-button" id="buy-zeyok">$</button>
+                <div class="ingredient" id="zeyoc-peel">
+                    <form action="/buyzeyoc" method="post"><div>
+                        <% { %>
+                            Buy Ze'yoc Peel: <input type="submit" class="buy-button" id="buy-zeyoc" value="$">
+                        <% } %>
+                    </div></form>
                 </div>
             </div>
 
             <div id="base-and-sweetener">
                 <div class="ingredient" id="gloop">
-                    <div class="buy-ingredient">Buy Gloop</div>
-                    <button class="buy-button" id="buy-gloop">$$</button>
+                    <form action="/buygloop" method="post"><div>
+                        <% { %>
+                            Buy Gloop: <input type="submit" class="buy-button" id="buy-gloop" value="$$">
+                        <% } %>
+                    </div></form>
                 </div>
 
                 <div class="ingredient" id="spanu-cream">
-                    <div class="buy-ingredient">Buy Spanu Cream</div>
-                    <button class="buy-button" id="buy-spanu">$$$</button>
+                    <form action="/buyspanu" method="post"><div>
+                        <% { %>
+                            Buy Spanu: <input type="submit" class="buy-button" id="buy-spanu" value="$$$">
+                        <% } %>
+                    </div></form>
                 </div>
             </div>
         </div>

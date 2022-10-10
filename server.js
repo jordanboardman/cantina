@@ -21,6 +21,7 @@ let username = "";
 // -----------------------------------------------------------------------------------------------------
 // HTTP requests
 
+// --------------------------------------------------
 // Page endpoints
 
 app.get("/", (req, res) => {
@@ -78,15 +79,95 @@ app.post("/newuser", async (req, res) => {
   res.redirect("/");
 });
 
+// -------------------------
+// Shop endpoints
+
 app.get("/shop", async (req, res) => {
-  let inv = await inventories.findOne({
-    where: {
-      username: username,
-    },
+    let inv = await inventories.findOne({
+      where: {
+        username: username,
+      },
+    });
+  
+    res.render("shop", { inv });
   });
 
-  res.render("shop", { inv });
-});
+app.post("/buyveax", async (req, res) => {
+    let inv = await inventories.findOne({
+        where: {
+          username: username,
+        },
+      });
+    buyVeax = inv.veax + 15
+    spendCredits = inv.credits - 100
+    await inv.update({
+        veax: buyVeax,
+        credits: spendCredits
+    })
+    res.redirect("/shop")
+})
+
+app.post("/buymozuc", async (req, res) => {
+    let inv = await inventories.findOne({
+        where: {
+          username: username,
+        },
+      });
+    buyMozuc = inv.mozuc + 15
+    spendCredits = inv.credits - 100
+    await inv.update({
+        mozuc: buyMozuc,
+        credits: spendCredits
+    })
+    res.redirect("/shop")
+})
+
+app.post("/buyzeyoc", async (req, res) => {
+    let inv = await inventories.findOne({
+        where: {
+          username: username,
+        },
+      });
+    buyZeyoc = inv.zeyoc + 15
+    spendCredits = inv.credits - 100
+    await inv.update({
+        zeyoc: buyZeyoc,
+        credits: spendCredits
+    })
+    res.redirect("/shop")
+})
+
+app.post("/buygloop", async (req, res) => {
+    let inv = await inventories.findOne({
+        where: {
+          username: username,
+        },
+      });
+    buyGloop = inv.gloop + 10
+    spendCredits = inv.credits - 200
+    await inv.update({
+        gloop: buyGloop,
+        credits: spendCredits
+    })
+    res.redirect("/shop")
+})
+
+app.post("/buyspanu", async (req, res) => {
+    let inv = await inventories.findOne({
+        where: {
+          username: username,
+        },
+      });
+    buySpanu = inv.spanu + 5
+    spendCredits = inv.credits - 300
+    await inv.update({
+        spanu: buySpanu,
+        credits: spendCredits
+    })
+    res.redirect("/shop")
+})
+
+// -------------------------
 
 app.get("/brew", async (req, res) => {
   let inv = await inventories.findOne({
@@ -109,6 +190,7 @@ app.get("/results", (req, res) => {
 app.get("/tutorial", (req, res) => {
   res.render("tutorial");
 });
+
 // --------------------------------------------------
 // Table endpoints
 
@@ -126,6 +208,7 @@ app.get("/users", async (req, res) => {
     res.send(people);
   }
 });
+
 // -------------------------
 // Scores endpoints
 
