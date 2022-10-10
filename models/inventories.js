@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
     zeyoc: DataTypes.INTEGER,
     gloop: DataTypes.INTEGER,
     spanu: DataTypes.INTEGER,
-    credits: DataTypes.INTEGER
+    credits: DataTypes.INTEGER,
+    weather: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'inventories',
