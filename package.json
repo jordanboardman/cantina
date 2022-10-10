@@ -13,15 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jorgerodriguez860/cantina.git"
+    "url": "git+https://github.com/jordanboardman/cantina.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jorgerodriguez860/cantina/issues"
+    "url": "https://github.com/jordanboardman/cantina/issues"
   },
-  "homepage": "https://github.com/jorgerodriguez860/cantina#readme",
+  "homepage": "https://github.com/jordanboardman/cantina#readme",
   "dependencies": {
     "axios": "^1.0.0",
     "bcrypt": "^5.1.0",
