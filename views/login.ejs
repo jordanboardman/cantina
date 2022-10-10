@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-        <a href="/register"><button id="register">Register</button></a>
+        <a href="/register"><input type="submit" id="register" value="Register"></a>
     </div>
     <div class="loginbody">
         <div id="logo">
@@ -20,7 +20,7 @@
                 <form action="/userlogin" method="post"><div class="forms">
                     <% { %>
                     Username: <input type="text" name="username" /><br>
-                    Password: <input type="text" name="password" /><br>
+                    Password: <input type="password" name="password" /><br>
                     <input type="submit" class="formsubmit">
                     <% } %>
                 </div></form>
