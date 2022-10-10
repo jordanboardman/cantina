@@ -6,6 +6,22 @@ body {
   font-family: "Press Start 2P", cursive;
 }
 
+input {
+  background-color: rgb(32, 52, 52);
+  color: green;
+  font-family: "Press Start 2P", cursive;
+  padding: 12px;
+  border: none;
+}
+
+input {
+  background-color: rgb(32, 52, 52);
+  color: green;
+  font-family: "Press Start 2P", cursive;
+  padding: 12px;
+  border: none;
+}
+
 .day {
   position: absolute;
   left: 5%;
@@ -27,7 +43,7 @@ body {
 }
 
 .formsubmit {
-  width: 65px;
+  width: 100px;
   align-self: center;
 }
 
@@ -52,6 +68,12 @@ body {
   left: 5%;
 }
 
+.weather {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
 #register {
   position: absolute;
   right: 5%;
@@ -71,4 +93,22 @@ body {
   bottom: 30px;
   transform: translate(-50%, -50%);
   margin: 0px auto;
+}
+
+.shop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#storefront {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ingredient {
+  display: flex;
+  justify-content: space-evenly;
 }

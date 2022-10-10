@@ -33,6 +33,40 @@
         </div>
     </div>
 
+    <div class="shop">
+        <h2>SHOP</h2>
+        <div id="storefront">
+            <div id="mixers">
+                <div class="ingredient" id="veax-spice">
+                    <div class="buy-ingredient">Buy V'eax spice</div>
+                    <button class="buy-button" id="buy-veax">$</button>
+                </div>
+
+                <div class="ingredient" id="mozuc-concentrate">
+                    <div class="buy-ingredient">Buy Mozuc Concentrate</div>
+                    <button class="buy-button" id="buy-mozuc">$</button>
+                </div>
+
+                <div class="ingredient" id="zeyok-peel">
+                    <div class="buy-ingredient">Buy Ze'yok Peel</div>
+                    <button class="buy-button" id="buy-zeyok">$</button>
+                </div>
+            </div>
+
+            <div id="base-and-sweetener">
+                <div class="ingredient" id="gloop">
+                    <div class="buy-ingredient">Buy Gloop</div>
+                    <button class="buy-button" id="buy-gloop">$$</button>
+                </div>
+
+                <div class="ingredient" id="spanu-cream">
+                    <div class="buy-ingredient">Buy Spanu Cream</div>
+                    <button class="buy-button" id="buy-spanu">$$$</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="username">
         <p><b>
                 <%= inv.username %>
@@ -46,6 +80,10 @@
     </div>
     <div id="help-button">
         <input type="submit" value="Help">
+    </div>
+
+    <div class="weather">
+        <p>Weather: <%= inv.weather %></p>
     </div>
 </body>
 
