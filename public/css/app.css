@@ -38,6 +38,12 @@
     padding: 5px;
 }
 
+.username {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
 #register {
     position: absolute;
     right: 5%;
