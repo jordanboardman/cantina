@@ -52,6 +52,12 @@ body {
     left: 5%;
 }
 
+.weather {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
 #register {
     position: absolute;
     right: 5%;
