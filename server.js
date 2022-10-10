@@ -104,8 +104,6 @@ app.get("/tutorial", (req, res) => {
 // -------------------------
 // Users endpoints
 
-// ------------
-// Users GET endpoints
 app.get("/users", async (req, res) => {
   // GET all
   if (Object.keys(req.body).length != 0) {
@@ -117,34 +115,11 @@ app.get("/users", async (req, res) => {
     res.send(people);
   }
 });
-
-// ------------
-// Users POST endpoint
-app.post("/users", async (req, res) => {
-  newUser = {
-    username: req.body.username,
-    password: req.body.password,
-  };
-  if (!(newUser in users)) {
-    // if the user doesn't already exist, add new user
-    await users.create(newUser);
-    const newEntry = await users.findOne({
-      where: {
-        username: req.body.username,
-      },
-    });
-    res.send(newEntry);
-  } else {
-    // else send error
-    res.statusCode = 400;
-    res.send("User already exists.");
-  }
-});
-
 // -------------------------
 // Scores endpoints
 
 app.get("/scores", async (req, res) => {
+  // GET all
   if (Object.keys(req.body).length != 0) {
     // if the request has a body, send error
     res.statusCode = 400;
@@ -161,6 +136,7 @@ app.get("/scores", async (req, res) => {
 // Inventories endpoints
 
 app.get("/inventories", async (req, res) => {
+  // GET all
   if (Object.keys(req.body).length != 0) {
     // if the request has a body, send error
     res.statusCode = 400;
