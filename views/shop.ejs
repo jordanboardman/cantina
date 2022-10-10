@@ -5,18 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/app.css">
-    <title>Purchase Ingredients</title>
+    <title>Shop</title>
 </head>
 <body>
     <div class='inventory'>
         <h2>INVENTORY</h2>
+        <div id="shopinv">
+            <div class="subinv">
+                <p><b>Credits</b>: <%= inv.credits %></p>
+                <p><b>Gloop</b>: <%= inv.gloop %></p>
+                <p><b>Veax</b>: <%= inv.veax %></p>
+            </div>
+            <div class="subinv">
+                <p><b>Mozuc</b>: <%= inv.mozuc %></p>
+                <p><b>Zeyoc</b>: <%= inv.zeyoc %></p>
+                <p><b>Spanu</b>: <%= inv.spanu %></p>
+            </div>
+        </div>
+    </div>
 
-        <p>Credits: <%= inv.credits %></p>
-        <p>Gloop: <%= inv.gloop %></p>
-        <p>Veax: <%= inv.veax %></p>
-        <p>Mozuc: <%= inv.mozuc %></p>
-        <p>Zeyoc: <%= inv.zeyoc %></p>
-        <p>Spanu: <%= inv.spanu %></p>
+    <div class="username">
+        <p><b><%= inv.username %></b>'s Cantina</p>
+    </div>
+
+    <div class="day">
+        <p>Day <b><%= inv.day %></b> of <b>10</b></p>
     </div>
 </body>
 </html>

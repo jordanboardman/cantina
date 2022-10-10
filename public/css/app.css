@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: black;
+    color: green;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.day {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+}
+
 .forms {
     display: flex;
     flex-direction: column;
@@ -28,8 +42,23 @@
     border: 3px;
 }
 
+.subinv {
+    padding: 5px;
+}
+
+.username {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
 #register {
     position: absolute;
     right: 5%;
     top: 5%;
+}
+
+#shopinv {
+    display: flex;
+    flex-direction: space-between;
 }
