@@ -1,3 +1,9 @@
+.day {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+}
+
 .forms {
     display: flex;
     flex-direction: column;
@@ -28,8 +34,17 @@
     border: 3px;
 }
 
+.subinv {
+    padding: 5px;
+}
+
 #register {
     position: absolute;
     right: 5%;
     top: 5%;
+}
+
+#shopinv {
+    display: flex;
+    flex-direction: space-between;
 }
