@@ -33,6 +33,9 @@ module.exports = {
       credits: {
         type: Sequelize.INTEGER
       },
+      weather: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
