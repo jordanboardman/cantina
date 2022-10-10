@@ -53,6 +53,16 @@ app.post("/newuser", async (req, res) => {
       username: req.body.username,
       password: hash,
     });
+    const weatherChance = Math.random() * 100;
+    if (weatherChance < 50){
+      weather = 'Average'
+    }
+    else if (weatherChance < 75){
+      weather = 'Hot'
+    }
+    else {
+      weather = 'Cold'
+    }
     inventories.create({
       username: req.body.username,
       day: 1,
@@ -62,6 +72,7 @@ app.post("/newuser", async (req, res) => {
       gloop: 0,
       spanu: 0,
       credits: 2000,
+      weather: weather
     });
   }
   res.redirect("/");
