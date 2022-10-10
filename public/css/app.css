@@ -1,3 +1,9 @@
+.day {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+}
+
 .forms {
     display: flex;
     flex-direction: column;
