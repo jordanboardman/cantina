@@ -5,8 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "db:up": "npx sequelize db:migrate && npx sequelize db:seed:all",
-    "db:down": "npx sequelize db:seed:undo:all && npx sequelize db:migrate:undo:all"
+    "db:down": "npx sequelize db:seed:undo:all && npx sequelize db:migrate:undo:all",
+    "build": "sequelize-cli db:migrate",
+    "migrate": "sequelize db:migrate"
   },
   "repository": {
     "type": "git",
@@ -27,10 +30,10 @@
     "express": "^4.18.1",
     "pg": "^8.8.0",
     "sequelize": "^6.24.0",
-    "sqlite3": "^5.1.2"
+    "sqlite3": "^5.1.2",
+    "sequelize-cli": "^6.5.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20",
-    "sequelize-cli": "^6.5.1"
+    "nodemon": "^2.0.20"
   }
 }
