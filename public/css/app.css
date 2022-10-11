@@ -89,6 +89,11 @@ input {
   top: 5%;
 }
 
+#registersubmit {
+  position: absolute;
+  top: 35%;
+}
+
 #shopinv {
   display: flex;
   flex-direction: space-between;
