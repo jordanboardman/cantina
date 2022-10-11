@@ -99,7 +99,9 @@ app.post("/newuser", async (req, res) => {
     });
     res.redirect("/");
   }
+  else{
   res.redirect("/register");
+  }
 });
 
 // -------------------------
