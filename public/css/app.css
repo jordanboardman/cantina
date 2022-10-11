@@ -112,3 +112,11 @@ input {
   display: flex;
   justify-content: space-evenly;
 }
+
+#readytobrew {
+  position: absolute;
+  right: 37.5%;
+  bottom: 25%;
+  width: 25%;
+  height: 10%
+}
