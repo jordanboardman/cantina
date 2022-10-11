@@ -4,6 +4,8 @@ body {
   background-color: black;
   color: green;
   font-family: "Press Start 2P", cursive;
+  height: 100%;
+  overflow: hidden;
 }
 
 input {
@@ -44,7 +46,8 @@ input {
 
 .formsubmit {
   width: 100px;
-  align-self: center;
+  position: absolute;
+  bottom: 43%;
 }
 
 .inventory {
@@ -84,6 +87,11 @@ input {
   position: absolute;
   right: 5%;
   top: 5%;
+}
+
+#registersubmit {
+  position: absolute;
+  top: 35%;
 }
 
 #shopinv {
