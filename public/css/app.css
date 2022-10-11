@@ -158,7 +158,7 @@ input {
 
 #everythingdrinks {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #bar {
@@ -166,6 +166,16 @@ input {
   flex-direction: column;
   align-items: center;
   width: 25%;
+}
+
+#office {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drink {
+  margin: 3px;
 }
 
 #shelves {
@@ -177,8 +187,8 @@ input {
 
 #brewery {
   display: flex;
-  justify-content: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   width: 25%;
 }
 

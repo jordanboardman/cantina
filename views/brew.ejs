@@ -34,9 +34,7 @@
     </div>
 
     <div class="username">
-        <p><b>
-                <%= inv.username %>
-            </b>'s Cantina</p>
+        <p><b><%= inv.username %></b>'s Cantina</p>
     </div>
 
 
@@ -46,21 +44,15 @@
             <div id="shelves">
                 <div class="shelf" id="bittershelf">
                     <h3>Bitter Shelf</h3>
-                    <p><b>Vemo</b>: <%= bar.vemo %></p>
-                    <p><b>Cost/drink</b>: <%= bar.vemoprice %></p>
-                    <p><b>Moze</b>: <%= bar.moze %></p>
-                    <p><b>Cost/drink</b>: <%= bar.mozeprice %></p>
-                    <p><b>Veze</b>: <%= bar.veze %></p>
-                    <p><b>Cost/drink</b>: <%= bar.vezeprice %></p>
+                    <p><b>Vemo</b>: <%= bar.vemo %> <br>($<%= bar.vemoprice %>)</p>
+                    <p><b>Moze</b>: <%= bar.moze %> <br>($<%= bar.mozeprice %>)</p>
+                    <p><b>Veze</b>: <%= bar.veze %> <br>($<%= bar.vezeprice %>)</p>
                 </div>
                 <div class="shelf" id="sweetshelf">
                     <h3>Sweet Shelf</h3>
-                    <p><b>Vemo Spanu</b>: <%= bar.vemospanu %></p>
-                    <p><b>Cost/drink</b>: <%= bar.vemospanuprice %></p>
-                    <p><b>Moze Spanu</b>: <%= bar.mozespanu %></p>
-                    <p><b>Cost/drink</b>: <%= bar.mozespanuprice %></p>
-                    <p><b>Veze Spanu</b>: <%= bar.vezespanu %></p>
-                    <p><b>Cost/drink</b>: <%= bar.vezespanuprice %></p>
+                    <p><b>Vemo Spanu</b>: <%= bar.vemospanu %> <br>($<%= bar.vemospanuprice %>)</p>
+                    <p><b>Moze Spanu</b>: <%= bar.mozespanu %> <br>($<%= bar.mozespanuprice %>)</p>
+                    <p><b>Veze Spanu</b>: <%= bar.vezespanu %> <br>($<%= bar.vezespanuprice %>)</p>
                 </div>
             </div>
         </div>
@@ -121,7 +113,9 @@
         </div>
 
         <div id="office">
-            <h2>OFFICE</h2>
+            <div id="officeheader">
+                <h2>OFFICE</h2>
+            </div>
             <form action="/setprice" method="post"><div class="forms">
                 <% { %>
                 Set Vemo Price: <input type="number" name="vemo" value="40"/><br>
@@ -140,6 +134,10 @@
         <p>Day <b>
                 <%= inv.day %>
             </b> of <b>10</b></p>
+    </div>
+
+    <div class="weather">
+        <p>Weather: <%= inv.weather %></p>
     </div>
 
     <div class="popularity">
