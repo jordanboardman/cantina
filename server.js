@@ -215,10 +215,16 @@ app.get("/brew", async (req, res) => {
     let inv = await inventories.findOne({
       where: {
         username: username,
-      },
+      }
     });
 
-    res.render("brew", { inv });
+    let bar = await drinks.findOne({
+      where: {
+        username:username
+      }
+    });
+
+    res.render("brew", { inv, bar });
   }
 });
 
