@@ -91,11 +91,17 @@ app.post("/newuser", async (req, res) => {
     drinks.create({
       username: req.body.username,
       vemo: 0,
+      vemoprice: 40,
       moze: 0,
+      mozeprice: 40,
       veze: 0,
+      vezeprice: 40,
       vemospanu: 0,
+      vemospanuprice: 55,
       mozespanu: 0,
-      vezespanu: 0
+      mozespanuprice: 55,
+      vezespanu: 0,
+      vezespanuprice: 55
     });
     res.redirect("/");
   }

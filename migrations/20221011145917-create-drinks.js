@@ -15,19 +15,37 @@ module.exports = {
       vemo: {
         type: Sequelize.INTEGER
       },
+      vemoprice: {
+        type: Sequelize.INTEGER
+      },
       moze: {
+        type: Sequelize.INTEGER
+      },
+      mozeprice: {
         type: Sequelize.INTEGER
       },
       veze: {
         type: Sequelize.INTEGER
       },
+      vezeprice: {
+        type: Sequelize.INTEGER
+      },
       vemospanu: {
+        type: Sequelize.INTEGER
+      },
+      vemospanuprice: {
         type: Sequelize.INTEGER
       },
       mozespanu: {
         type: Sequelize.INTEGER
       },
+      mozespanuprice: {
+        type: Sequelize.INTEGER
+      },
       vezespanu: {
+        type: Sequelize.INTEGER
+      },
+      vezespanuprice: {
         type: Sequelize.INTEGER
       },
       createdAt: {
