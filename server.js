@@ -54,7 +54,13 @@ app.get("/register", (req, res) => {
 });
 
 app.post("/newuser", async (req, res) => {
-  if (req.body.password === req.body.confirmpass) {
+  let user = await users.findOne({
+    where: {
+      username: req.body.username
+    }
+  })
+  
+  if (user == null && req.body.password === req.body.confirmpass) {
     const hash = await bcrypt.hash(req.body.password, 8);
     users.create({
       username: req.body.username,
@@ -92,7 +98,7 @@ app.post("/newuser", async (req, res) => {
       vezespanu: 0
     });
   }
-  res.redirect("/");
+  res.redirect("/register");
 });
 
 // -------------------------
