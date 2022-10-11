@@ -66,6 +66,7 @@
         </div>
 
         <div id="brewery">
+            <h2>BREWERY</h2>
             <div class="brewdrinks" id="unsweetdrinks">
                 <div class="drink" id="vemo">
                     <form action="/brewvemo" method="post"><div>
@@ -117,6 +118,21 @@
                     </div></form>
                 </div>
             </div>
+        </div>
+
+        <div id="office">
+            <h2>OFFICE</h2>
+            <form action="/setprice" method="post"><div class="forms">
+                <% { %>
+                Set Vemo Price: <input type="number" name="vemo" /><br>
+                Set Moze Price: <input type="number" name="moze" /><br>
+                Set Veze Price: <input type="number" name="veze" /><br>
+                Set Vemo Spanu Price: <input type="number" name="vemospanu" /><br>
+                Set Moze Spanu Price: <input type="number" name="mozespanu" /><br>
+                Set Veze Spanu Price: <input type="number" name="vezespanu" /><br>
+                <input type="submit" value="Set Prices">
+                <% } %>
+            </div></form>
         </div>
     </div>
 

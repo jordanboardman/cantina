@@ -242,6 +242,25 @@ app.get("/brew", async (req, res) => {
   }
 });
 
+app.post("/setprice", async (req, res) => {
+  let bar = await drinks.findOne({
+    where: {
+      username: username,
+    }
+  });
+
+  await bar.update({
+    vemoprice: req.body.vemo,
+    mozeprice: req.body.moze,
+    vezeprice: req.body.veze,
+    vemospanuprice: req.body.vemospanu,
+    mozespanuprice: req.body.mozespanu,
+    vezespanuprice: req.body.vezespanu
+  });
+
+  res.redirect("/brew")
+});
+
 app.post("/brewvemo", async (req, res) => {
   let inv = await inventories.findOne({
       where: {
