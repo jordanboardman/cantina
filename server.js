@@ -110,6 +110,11 @@ app.post("/newuser", async (req, res) => {
   }
 });
 
+app.get("/logout", async (req, res) => {
+  username = '';
+  res.redirect("/");
+})
+
 // -------------------------
 // Shop endpoints
 

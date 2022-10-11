@@ -101,6 +101,12 @@ input {
   margin: 0px auto;
 }
 
+.logout {
+  position: absolute;
+  top: 10%;
+  left: 9%;
+}
+
 .shop {
   display: flex;
   flex-direction: column;
