@@ -34,17 +34,18 @@
     </div>
 
     <div class="shop">
+        <br><br><br>
         <h2>SHOP</h2>
         <div id="storefront">
             <div id="mixers">
                 <div class="ingredient" id="veax-spice">
                     <form action="/buyveax" method="post"><div>
                         <% { %>
-                            Buy V'eax spice: <input type="submit" class="buy-button" id="buy-veax" value="15 for $100">
+                            Buy V'eax Spice: <input type="submit" class="buy-button" id="buy-veax" value="15 for $100">
                         <% } %>
                     </div></form>
                 </div>
-
+                <br>
                 <div class="ingredient" id="mozuc-concentrate">
                     <form action="/buymozuc" method="post"><div>
                         <% { %>
@@ -52,7 +53,7 @@
                         <% } %>
                     </div></form>
                 </div>
-
+                <br>
                 <div class="ingredient" id="zeyoc-peel">
                     <form action="/buyzeyoc" method="post"><div>
                         <% { %>
@@ -70,7 +71,7 @@
                         <% } %>
                     </div></form>
                 </div>
-
+                <br>
                 <div class="ingredient" id="spanu-cream">
                     <form action="/buyspanu" method="post"><div>
                         <% { %>
@@ -83,9 +84,7 @@
     </div>
 
     <div class="username">
-        <p><b>
-                <%= inv.username %>
-            </b>'s Cantina</p>
+        <p><b><%= inv.username %></b>'s Cantina</p>
     </div>
 
     <div class="day">
@@ -94,8 +93,8 @@
             </b> of <b>10</b></p>
     </div>
 
-    <div id="help-button">
-        <input type="submit" value="Help">
+    <div class="help">
+        <a href="/tutorial"><input type="submit" value="Help"></a>
     </div>
 
     <div class="weather">

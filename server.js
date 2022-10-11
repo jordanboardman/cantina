@@ -10,6 +10,7 @@ const axios = require("axios").default;
 const { Sequelize } = require("sequelize");
 const sequelize = new Sequelize("postgres://postgres@localhost:5432/cantina");
 const { users, scores, inventories, drinks } = require("./models");
+const e = require("express");
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.static("public"));
@@ -35,11 +36,16 @@ app.post("/userlogin", async (req, res) => {
     },
   });
 
-  if (bcrypt.compare(req.body.password, user.password)) {
-    res.redirect("/shop");
-    username = req.body.username;
-  } else {
-    res.redirect("/");
+  if (user == null){
+    res.redirect("/")
+  }
+  else {
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      res.redirect("/shop");
+      username = req.body.username;
+    } else {
+      res.redirect("/");
+    }
   }
 });
 
@@ -93,13 +99,18 @@ app.post("/newuser", async (req, res) => {
 // Shop endpoints
 
 app.get("/shop", async (req, res) => {
-    let inv = await inventories.findOne({
-      where: {
-        username: username,
-      }
-    });
-  
-    res.render("shop", { inv });
+    if (username == ''){
+      res.redirect("/")
+    }
+    else {
+      let inv = await inventories.findOne({
+        where: {
+          username: username,
+        },
+      });
+    
+      res.render("shop", { inv });
+    }
   });
 
 app.post("/buyveax", async (req, res) => {
@@ -181,13 +192,18 @@ app.post("/buyspanu", async (req, res) => {
 // Brew endpoints
 
 app.get("/brew", async (req, res) => {
-  let inv = await inventories.findOne({
-    where: {
-      username: username,
-    }
-  });
+  if (username == ''){
+    res.redirect("/")
+  }
+  else {
+    let inv = await inventories.findOne({
+      where: {
+        username: username,
+      },
+    });
 
-  res.render("brew", { inv });
+    res.render("brew", { inv });
+  }
 });
 
 app.post("/brewvemo", async (req, res) => {
@@ -367,11 +383,21 @@ app.post("/brewvezespanu", async (req, res) => {
 // -------------------------
 
 app.get("/simulate", (req, res) => {
-  res.render("simulate");
+  if (username == ''){
+    res.redirect("/")
+  }
+  else{
+    res.render("simulate");
+  }
 });
 
 app.get("/results", (req, res) => {
-  res.render("results");
+  if (username == ''){
+    res.redirect("/")
+  }
+  else{
+    res.render("results");
+  }
 });
 
 app.get("/tutorial", (req, res) => {
