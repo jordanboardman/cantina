@@ -121,6 +121,11 @@ app.post("/reset", async (req, res) => {
       username: username
     }
   })
+  let bar = await drinks.findOne({
+    where: {
+      username: username
+    }
+  })
   const weatherChance = Math.random() * 100;
     if (weatherChance < 50){
       weather = 'Average'
@@ -141,6 +146,20 @@ app.post("/reset", async (req, res) => {
     credits: 2000,
     weather: weather,
     popularity: 0
+  })
+  bar.update({
+    vemo: 0,
+    vemoprice: 40,
+    moze: 0,
+    mozeprice: 40,
+    veze: 0,
+    vezeprice: 40,
+    vemospanu: 0,
+    vemospanuprice: 55,
+    mozespanu: 0,
+    mozespanuprice: 55,
+    vezespanu: 0,
+    vezespanuprice: 55
   })
   res.redirect("/shop")
 })
