@@ -165,28 +165,41 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25%;
+  width: 33%;
 }
 
 #shelves {
   display: flex;
   justify-content: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
 #brewery {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+}
+
+#thebrews {
+  display: flex;
   justify-content: center;
-  justify-content: space-between;
-  width: 25%;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .brewdrinks {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+}
+
+#office {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
 }
 /* ----------------------------------------------------------------------------------------------------- */
 

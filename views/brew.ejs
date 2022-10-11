@@ -34,9 +34,7 @@
     </div>
 
     <div class="username">
-        <p><b>
-                <%= inv.username %>
-            </b>'s Cantina</p>
+        <p><b><%= inv.username %></b>'s Cantina</p>
     </div>
 
 
@@ -67,55 +65,59 @@
 
         <div id="brewery">
             <h2>BREWERY</h2>
-            <div class="brewdrinks" id="unsweetdrinks">
-                <div class="drink" id="vemo">
-                    <form action="/brewvemo" method="post"><div>
-                        <% { %>
-                            Brew: <input type="submit" class="brew-button" id="brew-vemo" value="Vemo">
-                        <% } %>
-                    </div></form>
+            <div id="thebrews">
+                <div class="brewdrinks" id="unsweetdrinks">
+                    <h3>Bitter Brews</h3>
+                    <div class="drink" id="vemo">
+                        <form action="/brewvemo" method="post"><div>
+                            <% { %>
+                                Brew: <input type="submit" class="brew-button" id="brew-vemo" value="Vemo">
+                            <% } %>
+                        </div></form>
+                    </div>
+
+                    <div class="drink" id="moze">
+                        <form action="/brewmoze" method="post"><div>
+                            <% { %>
+                                Brew: <input type="submit" class="brew-button" id="brew-moze" value="Moze">
+                            <% } %>
+                        </div></form>
+                    </div>
+
+                    <div class="drink" id="veze">
+                        <form action="/brewveze" method="post"><div>
+                            <% { %>
+                                Brew: <input type="submit" class="brew-button" id="brew-veze" value="Veze">
+                            <% } %>
+                        </div></form>
+                    </div>
                 </div>
 
-                <div class="drink" id="moze">
-                    <form action="/brewmoze" method="post"><div>
-                        <% { %>
-                            Brew: <input type="submit" class="brew-button" id="brew-moze" value="Moze">
-                        <% } %>
-                    </div></form>
-                </div>
+                <div class="brewdrinks" id="sweetdrinks">
+                    <h3>Sweet Brews</h3>
+                    <div class="drink" id="vemospanu">
+                        <form action="/brewvemospanu" method="post"><div>
+                            <% { %>
+                                Brew: <input type="submit" class="brew-button" id="brew-vemo-spanu" value="Vemo Spanu">
+                            <% } %>
+                        </div></form>
+                    </div>
 
-                <div class="drink" id="veze">
-                    <form action="/brewveze" method="post"><div>
-                        <% { %>
-                            Brew: <input type="submit" class="brew-button" id="brew-veze" value="Veze">
-                        <% } %>
-                    </div></form>
-                </div>
-            </div>
+                    <div class="drink" id="mozespanu">
+                        <form action="/brewmozespanu" method="post"><div>
+                            <% { %>
+                                Brew: <input type="submit" class="brew-button" id="brew-moze-spanu" value="Moze Spanu">
+                            <% } %>
+                        </div></form>
+                    </div>
 
-            <div class="brewdrinks" id="sweetdrinks">
-                <div class="drink" id="vemospanu">
-                    <form action="/brewvemospanu" method="post"><div>
-                        <% { %>
-                            Brew: <input type="submit" class="brew-button" id="brew-vemo-spanu" value="Vemo Spanu">
-                        <% } %>
-                    </div></form>
-                </div>
-
-                <div class="drink" id="mozespanu">
-                    <form action="/brewmozespanu" method="post"><div>
-                        <% { %>
-                            Brew: <input type="submit" class="brew-button" id="brew-moze-spanu" value="Moze Spanu">
-                        <% } %>
-                    </div></form>
-                </div>
-
-                <div class="drink" id="vezespanu">
-                    <form action="/brewvezespanu" method="post"><div>
-                        <% { %>
-                            Brew: <input type="submit" class="brew-button" id="brew-veze-spanu" value="Veze Spanu">
-                        <% } %>
-                    </div></form>
+                    <div class="drink" id="vezespanu">
+                        <form action="/brewvezespanu" method="post"><div>
+                            <% { %>
+                                Brew: <input type="submit" class="brew-button" id="brew-veze-spanu" value="Veze Spanu">
+                            <% } %>
+                        </div></form>
+                    </div>
                 </div>
             </div>
         </div>
