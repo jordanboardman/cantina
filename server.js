@@ -73,7 +73,8 @@ app.post("/newuser", async (req, res) => {
       gloop: 0,
       spanu: 0,
       credits: 2000,
-      weather: weather
+      weather: weather,
+      popularity: 0
     });
   }
   res.redirect("/");

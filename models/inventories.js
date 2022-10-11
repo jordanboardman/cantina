@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     gloop: DataTypes.INTEGER,
     spanu: DataTypes.INTEGER,
     credits: DataTypes.INTEGER,
-    weather: DataTypes.STRING
+    weather: DataTypes.STRING,
+    popularity: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'inventories',
