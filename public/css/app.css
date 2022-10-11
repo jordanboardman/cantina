@@ -58,6 +58,12 @@ input {
   border: 3px;
 }
 
+.popularity {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
 .subinv {
   padding: 5px;
 }

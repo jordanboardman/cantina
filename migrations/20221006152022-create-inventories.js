@@ -36,6 +36,9 @@ module.exports = {
       weather: {
         type: Sequelize.STRING
       },
+      popularity: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
