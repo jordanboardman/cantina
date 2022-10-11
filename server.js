@@ -36,11 +36,16 @@ app.post("/userlogin", async (req, res) => {
     },
   });
 
-  if (bcrypt.compare(req.body.password, user.password)) {
-    res.redirect("/shop");
-    username = req.body.username;
-  } else {
-    res.redirect("/");
+  if (user == null){
+    res.redirect("/")
+  }
+  else {
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      res.redirect("/shop");
+      username = req.body.username;
+    } else {
+      res.redirect("/");
+    }
   }
 });
 
