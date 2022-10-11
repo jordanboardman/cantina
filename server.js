@@ -97,6 +97,7 @@ app.post("/newuser", async (req, res) => {
       mozespanu: 0,
       vezespanu: 0
     });
+    res.redirect("/");
   }
   res.redirect("/register");
 });
