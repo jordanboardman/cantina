@@ -113,19 +113,21 @@ app.get("/shop", async (req, res) => {
     }
   });
 
-app.post("/buyveax", async (req, res) => {
+app.post("/buyveax", async (req, res) => {  
     let inv = await inventories.findOne({
         where: {
           username: username,
         }
       });
-    buyVeax = inv.veax + 15
-    spendCredits = inv.credits - 100
-    await inv.update({
-        veax: buyVeax,
-        credits: spendCredits
-    })
+    if (inv.credits >= 100){
+      buyVeax = inv.veax + 15
+      spendCredits = inv.credits - 100
+      await inv.update({
+          veax: buyVeax,
+          credits: spendCredits
+      })}
     res.redirect("/shop")
+    
 })
 
 app.post("/buymozuc", async (req, res) => {
@@ -134,12 +136,14 @@ app.post("/buymozuc", async (req, res) => {
           username: username,
         }
       });
-    buyMozuc = inv.mozuc + 15
-    spendCredits = inv.credits - 100
-    await inv.update({
-        mozuc: buyMozuc,
-        credits: spendCredits
-    })
+    if (inv.credits >= 100){
+      buyMozuc = inv.mozuc + 15
+      spendCredits = inv.credits - 100
+      await inv.update({
+          mozuc: buyMozuc,
+          credits: spendCredits
+      })
+    }
     res.redirect("/shop")
 })
 
@@ -149,12 +153,14 @@ app.post("/buyzeyoc", async (req, res) => {
           username: username,
         }
       });
-    buyZeyoc = inv.zeyoc + 15
-    spendCredits = inv.credits - 100
-    await inv.update({
-        zeyoc: buyZeyoc,
-        credits: spendCredits
-    })
+    if (inv.credits >= 100){
+      buyZeyoc = inv.zeyoc + 15
+      spendCredits = inv.credits - 100
+      await inv.update({
+          zeyoc: buyZeyoc,
+          credits: spendCredits
+      })
+    }
     res.redirect("/shop")
 })
 
@@ -164,12 +170,14 @@ app.post("/buygloop", async (req, res) => {
           username: username,
         }
       });
-    buyGloop = inv.gloop + 10
-    spendCredits = inv.credits - 200
-    await inv.update({
-        gloop: buyGloop,
-        credits: spendCredits
-    })
+    if (inv.credits >= 200){
+      buyGloop = inv.gloop + 10
+      spendCredits = inv.credits - 200
+      await inv.update({
+          gloop: buyGloop,
+          credits: spendCredits
+      })
+    }
     res.redirect("/shop")
 })
 
@@ -179,12 +187,14 @@ app.post("/buyspanu", async (req, res) => {
           username: username,
         }
       });
-    buySpanu = inv.spanu + 5
-    spendCredits = inv.credits - 300
-    await inv.update({
-        spanu: buySpanu,
-        credits: spendCredits
-    })
+    if (inv.credits >= 300){
+      buySpanu = inv.spanu + 5
+      spendCredits = inv.credits - 300
+      await inv.update({
+          spanu: buySpanu,
+          credits: spendCredits
+      })
+    }
     res.redirect("/shop")
 })
 
@@ -218,25 +228,26 @@ app.post("/brewvemo", async (req, res) => {
         username: username,
       }
     });
-  useVeax = inv.veax - 1
-  useMozuc = inv.mozuc - 1
-  useGloop = inv.gloop - 1
-  await inv.update({
-      veax: useVeax,
-      mozuc: useMozuc,
-      gloop: useGloop
-  });
+  if (inv.veax > 0 && inv.mozuc > 0 && inv.gloop > 0){
+    useVeax = inv.veax - 1
+    useMozuc = inv.mozuc - 1
+    useGloop = inv.gloop - 1
+    await inv.update({
+        veax: useVeax,
+        mozuc: useMozuc,
+        gloop: useGloop
+    });
 
-  let bar = await drinks.findOne({
-    where: {
-      username: username,
-    }
-  });
-  mixVemo = bar.vemo + 1
-  await bar.update({
-    vemo: mixVemo
-  });
-
+    let bar = await drinks.findOne({
+      where: {
+        username: username,
+      }
+    });
+    mixVemo = bar.vemo + 1
+    await bar.update({
+      vemo: mixVemo
+    });
+  }
   res.redirect("/brew")
 });
 
@@ -246,25 +257,26 @@ app.post("/brewmoze", async (req, res) => {
         username: username,
       }
     });
-  useMozuc = inv.mozuc - 1
-  useZeyoc = inv.zeyoc - 1
-  useGloop = inv.gloop - 1
-  await inv.update({
-      mozuc: useMozuc,
-      zeyoc: useZeyoc,
-      gloop: useGloop
-  });
+  if (inv.mozuc > 0 && inv.zeyoc > 0 && inv.gloop > 0){
+    useMozuc = inv.mozuc - 1
+    useZeyoc = inv.zeyoc - 1
+    useGloop = inv.gloop - 1
+    await inv.update({
+        mozuc: useMozuc,
+        zeyoc: useZeyoc,
+        gloop: useGloop
+    });
 
-  let bar = await drinks.findOne({
-    where: {
-      username: username,
-    }
-  });
-  mixMoze = bar.moze + 1
-  await bar.update({
-    moze: mixMoze
-  });
-  
+    let bar = await drinks.findOne({
+      where: {
+        username: username,
+      }
+    });
+    mixMoze = bar.moze + 1
+    await bar.update({
+      moze: mixMoze
+    });
+  }
   res.redirect("/brew")
 });
 
@@ -274,25 +286,26 @@ app.post("/brewveze", async (req, res) => {
         username: username,
       }
     });
-  useVeax = inv.veax - 1
-  useZeyoc = inv.zeyoc - 1
-  useGloop = inv.gloop - 1
-  await inv.update({
-      veax: useVeax,
-      zeyoc: useZeyoc,
-      gloop: useGloop
-  });
+  if (inv.veax > 0 && inv.zeyoc > 0 && inv.gloop > 0){
+    useVeax = inv.veax - 1
+    useZeyoc = inv.zeyoc - 1
+    useGloop = inv.gloop - 1
+    await inv.update({
+        veax: useVeax,
+        zeyoc: useZeyoc,
+        gloop: useGloop
+    });
 
-  let bar = await drinks.findOne({
-    where: {
-      username: username,
-    }
-  });
-  mixVeze = bar.veze + 1
-  await bar.update({
-    veze: mixVeze
-  });
-  
+    let bar = await drinks.findOne({
+      where: {
+        username: username,
+      }
+    });
+    mixVeze = bar.veze + 1
+    await bar.update({
+      veze: mixVeze
+    });
+  }
   res.redirect("/brew")
 });
 
@@ -302,27 +315,28 @@ app.post("/brewvemospanu", async (req, res) => {
         username: username,
       }
     });
-  useVeax = inv.veax - 1
-  useMozuc = inv.mozuc - 1
-  useGloop = inv.gloop - 1
-  useSpanu = inv.spanu - 1
-  await inv.update({
-      veax: useVeax,
-      mozuc: useMozuc,
-      gloop: useGloop,
-      spanu: useSpanu
-  });
+  if (inv.veax > 0 && inv.mozuc > 0 && inv.gloop > 0 && inv.spanu > 0){
+    useVeax = inv.veax - 1
+    useMozuc = inv.mozuc - 1
+    useGloop = inv.gloop - 1
+    useSpanu = inv.spanu - 1
+    await inv.update({
+        veax: useVeax,
+        mozuc: useMozuc,
+        gloop: useGloop,
+        spanu: useSpanu
+    });
 
-  let bar = await drinks.findOne({
-    where: {
-      username: username,
-    }
-  });
-  mixVemoSpanu = bar.vemospanu + 1
-  await bar.update({
-    vemospanu: mixVemoSpanu
-  });
-    
+    let bar = await drinks.findOne({
+      where: {
+        username: username,
+      }
+    });
+    mixVemoSpanu = bar.vemospanu + 1
+    await bar.update({
+      vemospanu: mixVemoSpanu
+    });
+  }  
   res.redirect("/brew")
 });
 
@@ -332,27 +346,28 @@ app.post("/brewmozespanu", async (req, res) => {
         username: username,
       }
     });
-  useMozuc = inv.mozuc - 1
-  useZeyoc = inv.zeyoc - 1
-  useGloop = inv.gloop - 1
-  useSpanu = inv.spanu - 1
-  await inv.update({
-      mozuc: useMozuc,
-      zeyoc: useZeyoc,
-      gloop: useGloop,
-      spanu: useSpanu
-  });
+  if (inv.mozuc > 0 && inv.zeyoc > 0 && inv.gloop > 0 && inv.spanu > 0){
+    useMozuc = inv.mozuc - 1
+    useZeyoc = inv.zeyoc - 1
+    useGloop = inv.gloop - 1
+    useSpanu = inv.spanu - 1
+    await inv.update({
+        mozuc: useMozuc,
+        zeyoc: useZeyoc,
+        gloop: useGloop,
+        spanu: useSpanu
+    });
 
-  let bar = await drinks.findOne({
-    where: {
-      username: username,
-    }
-  });
-  mixMozeSpanu = bar.mozespanu + 1
-  await bar.update({
-    mozespanu: mixMozeSpanu
-  });
-    
+    let bar = await drinks.findOne({
+      where: {
+        username: username,
+      }
+    });
+    mixMozeSpanu = bar.mozespanu + 1
+    await bar.update({
+      mozespanu: mixMozeSpanu
+    });
+  }
   res.redirect("/brew")
 });
 
@@ -362,27 +377,28 @@ app.post("/brewvezespanu", async (req, res) => {
         username: username,
       }
     });
-  useVeax = inv.veax - 1
-  useZeyoc = inv.zeyoc - 1
-  useGloop = inv.gloop - 1
-  useSpanu = inv.spanu - 1
-  await inv.update({
-      veax: useVeax,
-      zeyoc: useZeyoc,
-      gloop: useGloop,
-      spanu: useSpanu
-  });
+  if (inv.veax > 0 && inv.zeyoc > 0 && inv.gloop > 0 && inv.spanu > 0){
+    useVeax = inv.veax - 1
+    useZeyoc = inv.zeyoc - 1
+    useGloop = inv.gloop - 1
+    useSpanu = inv.spanu - 1
+    await inv.update({
+        veax: useVeax,
+        zeyoc: useZeyoc,
+        gloop: useGloop,
+        spanu: useSpanu
+    });
 
-  let bar = await drinks.findOne({
-    where: {
-      username: username,
-    }
-  });
-  mixVezeSpanu = bar.vezespanu + 1
-  await bar.update({
-    vezespanu: mixVezeSpanu
-  });
-  
+    let bar = await drinks.findOne({
+      where: {
+        username: username,
+      }
+    });
+    mixVezeSpanu = bar.vezespanu + 1
+    await bar.update({
+      vezespanu: mixVezeSpanu
+    });
+  }
   res.redirect("/brew")
 });
 
