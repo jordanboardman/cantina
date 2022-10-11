@@ -92,19 +92,25 @@ input {
 }
 
 .help {
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  left: 50%;
-  bottom: 30px;
-  transform: translate(-50%, -50%);
-  margin: 0px auto;
+  position: absolute;
+  bottom: 5%;
+  left: 40%;
+}
+
+#loginhelp {
+  left: 47.5%;
 }
 
 .logout {
   position: absolute;
   top: 10%;
   left: 9%;
+}
+
+.reset {
+  position: absolute;
+  bottom: 5%;
+  right: 40%;
 }
 
 .shop {

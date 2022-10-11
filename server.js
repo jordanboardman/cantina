@@ -115,6 +115,36 @@ app.get("/logout", async (req, res) => {
   res.redirect("/");
 })
 
+app.post("/reset", async (req, res) => {
+  let inv = await inventories.findOne({
+    where: {
+      username: username
+    }
+  })
+  const weatherChance = Math.random() * 100;
+    if (weatherChance < 50){
+      weather = 'Average'
+    }
+    else if (weatherChance < 75){
+      weather = 'Hot'
+    }
+    else {
+      weather = 'Cold'
+    }
+  inv.update({
+    day: 1,
+    veax: 0,
+    mozuc: 0,
+    zeyoc: 0,
+    gloop: 0,
+    spanu: 0,
+    credits: 2000,
+    weather: weather,
+    popularity: 0
+  })
+  res.redirect("/shop")
+})
+
 // -------------------------
 // Shop endpoints
 
