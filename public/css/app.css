@@ -133,6 +133,43 @@ input {
   align-items: flex-end;
 }
 
+/* ----------------------------------------------------------------------------------------------------- */
+/* brew.ejs only */
+
+#everythingdrinks {
+  display: flex;
+  justify-content: space-between;
+}
+
+#bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+#shelves {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#brewery {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  width: 25%;
+}
+
+.brewdrinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+/* ----------------------------------------------------------------------------------------------------- */
+
 @media screen and (max-width: 700px) {
   #logoimg {
     width: 400px;
