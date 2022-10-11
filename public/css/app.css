@@ -126,3 +126,13 @@ input {
   width: 25%;
   height: 10%
 }
+
+@media screen and (max-width: 700px) {
+  #logoimg {
+    width: 400px;
+  }
+
+  #register {
+    padding: 5px;
+  }
+}
