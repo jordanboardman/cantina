@@ -10,6 +10,7 @@ const axios = require("axios").default;
 const { Sequelize } = require("sequelize");
 const sequelize = new Sequelize("postgres://postgres@localhost:5432/cantina");
 const { users, scores, inventories } = require("./models");
+const e = require("express");
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.static("public"));
@@ -84,13 +85,18 @@ app.post("/newuser", async (req, res) => {
 // Shop endpoints
 
 app.get("/shop", async (req, res) => {
-    let inv = await inventories.findOne({
-      where: {
-        username: username,
-      },
-    });
-  
-    res.render("shop", { inv });
+    if (username == ''){
+      res.redirect("/")
+    }
+    else {
+      let inv = await inventories.findOne({
+        where: {
+          username: username,
+        },
+      });
+    
+      res.render("shop", { inv });
+    }
   });
 
 app.post("/buyveax", async (req, res) => {
@@ -171,21 +177,36 @@ app.post("/buyspanu", async (req, res) => {
 // -------------------------
 
 app.get("/brew", async (req, res) => {
-  let inv = await inventories.findOne({
-    where: {
-      username: username,
-    },
-  });
+  if (username == ''){
+    res.redirect("/")
+  }
+  else {
+    let inv = await inventories.findOne({
+      where: {
+        username: username,
+      },
+    });
 
-  res.render("brew", { inv });
+    res.render("brew", { inv });
+  }
 });
 
 app.get("/simulate", (req, res) => {
-  res.render("simulate");
+  if (username == ''){
+    res.redirect("/")
+  }
+  else{
+    res.render("simulate");
+  }
 });
 
 app.get("/results", (req, res) => {
-  res.render("results");
+  if (username == ''){
+    res.redirect("/")
+  }
+  else{
+    res.render("results");
+  }
 });
 
 app.get("/tutorial", (req, res) => {
