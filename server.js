@@ -15,6 +15,7 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
+import { simulate } from ('./public/js/simulation');
 // -----------------------------------------------------------------------------------------------------
 // Global Variables
 
@@ -506,6 +507,24 @@ app.get("/simulate", async (req, res) => {
     res.render("simulate", { inv });
   }
 });
+
+app.post("/openbar"), async (req, res) => {
+  let inv = await inventories.findOne({
+    where: {
+      username: username
+    }
+  })
+
+  let bar = await drinks.findOne({
+    where: {
+      username: username
+    }
+  })
+
+  simulate(inv, bar);
+}
+
+// -------------------------
 
 app.get("/results", (req, res) => {
   if (username == ''){
