@@ -579,6 +579,10 @@ app.post("/openbar", async (req, res) => {
 
   if(day == 11){
     gameOver = true;
+    scores.create({
+      username: username,
+      points: credits
+    })
   }
 
   inv.update({
