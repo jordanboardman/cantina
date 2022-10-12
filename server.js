@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
-const ejs = require("ejs");
+const simulate = require('./public/js/simulation');
 const { render } = require("ejs");
 const axios = require("axios").default;
 const { Sequelize } = require("sequelize");
@@ -15,7 +15,6 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
-import { simulate } from ('./public/js/simulation');
 // -----------------------------------------------------------------------------------------------------
 // Global Variables
 
