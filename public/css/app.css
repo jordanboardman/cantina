@@ -227,6 +227,13 @@ input {
   justify-content: space-around;
   width: 50%;
 }
+
+#leaderboard {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  width: 50%;
+}
 /* ----------------------------------------------------------------------------------------------------- */
 @media screen and (max-width: 700px) {
   #logoimg {
