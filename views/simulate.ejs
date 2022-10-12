@@ -10,9 +10,6 @@
 </head>
 
 <body>
-    <div class="status">
-        <p>Status</p>
-    </div>
     <div>
         <a href="/shop"><input type="submit" id="returntoshop" value="Return to Shop"></a>
     </div>
@@ -50,27 +47,34 @@
         </div>
     </div>
 
-    <div class="sim-info-left">
-        <div class="updatinginfo">
-            <p>Updating Info</p>
+    <div class="sim-info">
+        <div class="sim-info-sub">
+            <div class="updatinginfo">
+                <p>Varkro: <%= simulation.varkro %></p>
+            </div>
+            <div class="updatinginfo">
+                <p>Ukrel: <%= simulation.ukrel %></p>
+            </div>
+            <div class="updatinginfo">
+                <p>Ghavik: <%= simulation.ghavik %></p>
+            </div>
         </div>
-        <div class="updatinginfo">
-            <p>Updating Info</p>
-        </div>
-        <div class="updatinginfo">
-            <p>Updating Info</p>
-        </div>
-    </div>
 
-    <div class="sim-info-right">
-        <div class="updatinginfo">
-            <p>Updating Info</p>
+        <div class="credits">
+            <p>Credits Earned: </p> 
+            <p><%= simulation.totalCredits %></p>
         </div>
-        <div class="updatinginfo">
-            <p>Updating Info</p>
-        </div>
-        <div class="updatinginfo">
-            <p>Updating Info</p>
+
+        <div class="sim-info-sub">
+            <div class="updatinginfo">
+                <p>Vemo: <%= simulation.vemoPurchased + simulation.vemoSpanuPurchased %></p>
+            </div>
+            <div class="updatinginfo">
+                <p>Moze: <%= simulation.mozePurchased + simulation.mozeSpanuPurchased %></p>
+            </div>
+            <div class="updatinginfo">
+                <p>Veze: <%= simulation.vezePurchased + simulation.vezeSpanuPurchased %></p>
+            </div>
         </div>
     </div>
 
@@ -94,7 +98,7 @@
 
     <div class="day">
         <p>Day <b>
-                <%= inv.day %>
+                <%= inv.day - 1 %>
             </b> of <b>10</b></p>
     </div>
 </body>

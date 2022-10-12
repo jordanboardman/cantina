@@ -252,22 +252,31 @@ input {
   background: green;
   color: black;
   border-radius: 30%;
-  width: 9%;
+  width: 200px;
+  justify-content: center;
 }
 
-.sim-info-left {
+.sim-info-sub {
   display: flex;
   justify-content: space-around;
-  gap: 30px;
-  left: 26%;
-  top: 50%;
   flex-direction: column;
-  position: relative;
 }
 
-/* .sim-info-right {
+.sim-info {
   display: flex;
   justify-content: space-around;
-  gap: 30px;
-  flex-direction: column;
-} */
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  width: 70%;
+}
+
+.credits {
+  justify-content: center;
+}
+
+#returntoshop {
+  position: absolute;
+  left: 42%;
+  bottom: 20%;
+}
