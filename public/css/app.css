@@ -62,9 +62,9 @@ input {
 }
 
 .popularity {
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
 }
 
 .subinv {
@@ -144,7 +144,7 @@ input {
   right: 37.5%;
   bottom: 25%;
   width: 25%;
-  height: 10%
+  height: 10%;
 }
 
 #return {
@@ -221,4 +221,16 @@ input {
   #register {
     padding: 5px;
   }
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 35%;
+  left: 45%;
+  background: green;
+  color: black;
+  border-radius: 30%;
+  width: 9%;
 }
