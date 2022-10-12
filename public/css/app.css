@@ -190,7 +190,7 @@ input {
   flex-direction: column;
   align-items: center;
   width: 25%;
- }
+}
 
 #thebrews {
   display: flex;
@@ -234,3 +234,28 @@ input {
   border-radius: 30%;
   width: 9%;
 }
+
+.updatinginfo {
+  display: flex;
+  background: green;
+  color: black;
+  border-radius: 30%;
+  width: 9%;
+}
+
+.sim-info-left {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  left: 26%;
+  top: 50%;
+  flex-direction: column;
+  position: relative;
+}
+
+/* .sim-info-right {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-direction: column;
+} */
