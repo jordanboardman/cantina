@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
-const simulate = require('./public/js/simulation');
+const { simulate } = require('./public/js/simulation');
 const { render } = require("ejs");
 const axios = require("axios").default;
 const { Sequelize } = require("sequelize");
@@ -19,6 +19,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Global Variables
 
 let username = "";
+let simulation = {
+  varkro: 0,
+  ukrel: 0,
+  ghavik: 0,
+  vemoPurchased : 0,
+  mozePurchased : 0,
+  vezePurchased : 0,
+  vemoSpanuPurchased : 0,
+  mozeSpanuPurchased : 0,
+  vezeSpanuPurchased : 0,
+  vemoCredits : 0,
+  mozeCredits : 0,
+  vezeCredits : 0,
+  vemoSpanuCredits: 0,
+  mozeSpanuCredits : 0,
+  vezeSpanuCredits: 0,
+  totalCredits: 0,
+  popularity: 0
+};
 // -----------------------------------------------------------------------------------------------------
 // HTTP requests
 
@@ -503,11 +522,11 @@ app.get("/simulate", async (req, res) => {
       }
     });
 
-    res.render("simulate", { inv });
+    res.render("simulate", { inv, simulation });
   }
 });
 
-app.post("/openbar"), async (req, res) => {
+app.post("/openbar", async (req, res) => {
   let inv = await inventories.findOne({
     where: {
       username: username
@@ -520,8 +539,47 @@ app.post("/openbar"), async (req, res) => {
     }
   })
 
-  simulate(inv, bar);
-}
+  simulation = simulate(inv, bar);
+
+  bar.update({
+    vemo: 0,
+    vemoprice: 40,
+    moze: 0,
+    mozeprice: 40,
+    veze: 0,
+    vezeprice: 40,
+    vemospanu: 0,
+    vemospanuprice: 55,
+    mozespanu: 0,
+    mozespanuprice: 55,
+    vezespanu: 0,
+    vezespanuprice: 55    
+  })
+
+  let day = inv.day + 1;
+  let popularity = simulation.popularity;
+  let credits = inv.credits + simulation.totalCredits
+
+  const weatherChance = Math.random() * 100;
+  if (weatherChance < 50){
+    weather = 'Average'
+  }
+  else if (weatherChance < 75){
+    weather = 'Hot'
+  }
+  else {
+    weather = 'Cold'
+  }
+
+  inv.update({
+    day: day,
+    popularity: popularity,
+    credits: credits,
+    weather: weather
+  })
+
+  res.redirect("/simulate")
+})
 
 // -------------------------
 

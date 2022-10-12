@@ -14,11 +14,13 @@
         <p>Status</p>
     </div>
     <div>
-        <a href="/results"><input type="submit" id="readytobrew" value="Close Out"></a>
+        <a href="/shop"><input type="submit" id="returntoshop" value="Return to Shop"></a>
     </div>
 
     <div class="username">
-        <p><b><%= inv.username %></b>'s Cantina</p>
+        <p><b>
+                <%= inv.username %>
+            </b>'s Cantina</p>
     </div>
 
     <div class="logout">
@@ -48,8 +50,33 @@
         </div>
     </div>
 
+    <div class="sim-info-left">
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+    </div>
+
+    <div class="sim-info-right">
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+    </div>
+
     <div class="weather">
-        <p>Weather: <%= inv.weather %></p>
+        <p>Weather: <%= inv.weather %>
+        </p>
     </div>
 
     <div class="popularity">
@@ -58,6 +85,7 @@
 
     <div class="reset">
         <form action="/reset" method="post"><input type="submit" value="Reset Game"></form>
+        
     </div>
 
     <div class="help">
