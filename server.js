@@ -492,12 +492,18 @@ app.post("/brewvezespanu", async (req, res) => {
 
 // -------------------------
 
-app.get("/simulate", (req, res) => {
+app.get("/simulate", async (req, res) => {
   if (username == ''){
     res.redirect("/")
   }
   else{
-    res.render("simulate");
+    let inv = await inventories.findOne({
+      where: {
+        username: username,
+      }
+    });
+
+    res.render("simulate", { inv });
   }
 });
 
