@@ -16,5 +16,3 @@ let simulate = (inv, bar) => {
     let ukrel = Math.floor(Math.random * 20) + Math.floor(Math.random * inv.popularity) + ukrelBonus;
     let ghavik = Math.floor(Math.random * 20) + Math.floor(Math.random * inv.popularity) + ghavikBonus;
 }
-
-export { simulate }
