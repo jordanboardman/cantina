@@ -36,9 +36,13 @@ Supernova Cantina is a text based brewery simulator inspired by pc based games o
 ## Screenshots of Supernova Cantina
 
 Login/Register
+<img src="./login.png">
 Shop for materials
+<img src="./shop.png">
 Brew your brews
+<img src="./brew.png">
 Tutorial
+<img src="./tutorial.png">
 
 ## Developer Team
 
