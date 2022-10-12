@@ -8,6 +8,61 @@
     <title>Results</title>
 </head>
 <body>
-    Results go here.
+    <div>
+        <a href="/shop"><input type="submit" id="readytobrew" value="On To Next Day"></a>
+    </div>
+
+    <div class="username">
+        <p><b><%= inv.username %></b>'s Cantina</p>
+    </div>
+
+    <div class="logout">
+        <form action="/logout" method="get"><input type="submit" value="Log Out"></form>
+    </div>
+
+    <div class='inventory'>
+        <h2>INVENTORY</h2>
+        <div id="shopinv">
+            <div class="subinv">
+                <p><b>Credits</b>: <%= inv.credits %>
+                </p>
+                <p><b>Gloop</b>: <%= inv.gloop %>
+                </p>
+                <p><b>Spanu</b>: <%= inv.spanu %>
+                </p>
+            </div>
+            <div class="subinv">
+                <p><b>Veax</b>: <%= inv.veax %>
+                </p>
+                <p><b>Mozuc</b>: <%= inv.mozuc %>
+                </p>
+                <p><b>Zeyoc</b>: <%= inv.zeyoc %>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="weather">
+        <p>Weather: <%= inv.weather %></p>
+    </div>
+
+    <div class="popularity">
+        <p>Popularity: <%= inv.popularity %>%</p>
+    </div>
+
+    <div class="reset">
+        <form action="/reset" method="post"><input type="submit" value="Reset Game"></form>
+    </div>
+
+    <div class="help">
+        <a href="/tutorial"><input type="submit" value="Help"></a>
+    </div>
+
+    <div class="day">
+        <p>Day <b>
+                <%= inv.day %>
+            </b> of <b>10</b></p>
+    </div>
 </body>
 </html>

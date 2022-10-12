@@ -511,12 +511,18 @@ app.post("/brewvezespanu", async (req, res) => {
 
 // -------------------------
 
-app.get("/simulate", (req, res) => {
+app.get("/simulate", async (req, res) => {
   if (username == ''){
     res.redirect("/")
   }
   else{
-    res.render("simulate", { simulation });
+    let inv = await inventories.findOne({
+      where: {
+        username: username,
+      }
+    });
+
+    res.render("simulate", { inv, simulation });
   }
 });
 
@@ -577,12 +583,18 @@ app.post("/openbar", async (req, res) => {
 
 // -------------------------
 
-app.get("/results", (req, res) => {
+app.get("/results", async (req, res) => {
   if (username == ''){
     res.redirect("/")
   }
   else{
-    res.render("results");
+    let inv = await inventories.findOne({
+      where: {
+        username: username,
+      }
+    });
+
+    res.render("results", { inv });
   }
 });
 

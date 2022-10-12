@@ -6,16 +6,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/app.css">
-    <title>Simulation page</title>
+    <title>Simulation</title>
 </head>
 
 <body>
+    <div class="status">
+        <p>Status</p>
+    </div>
     <div>
-        <a href="/shop"><input type="submit" id="readytobrew" value="Return to Shop"></a>
+        <a href="/shop"><input type="submit" id="returntoshop" value="Return to Shop"></a>
+    </div>
+
+    <div class="username">
+        <p><b>
+                <%= inv.username %>
+            </b>'s Cantina</p>
+    </div>
+
+    <div class="logout">
+        <form action="/logout" method="get"><input type="submit" value="Log Out"></form>
+    </div>
+
+    <div class='inventory'>
+        <h2>INVENTORY</h2>
+        <div id="shopinv">
+            <div class="subinv">
+                <p><b>Credits</b>: <%= inv.credits %>
+                </p>
+                <p><b>Gloop</b>: <%= inv.gloop %>
+                </p>
+                <p><b>Spanu</b>: <%= inv.spanu %>
+                </p>
+            </div>
+            <div class="subinv">
+                <p><b>Veax</b>: <%= inv.veax %>
+                </p>
+                <p><b>Mozuc</b>: <%= inv.mozuc %>
+                </p>
+                <p><b>Zeyoc</b>: <%= inv.zeyoc %>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="sim-info-left">
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+    </div>
+
+    <div class="sim-info-right">
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+        <div class="updatinginfo">
+            <p>Updating Info</p>
+        </div>
+    </div>
+
+    <div class="weather">
+        <p>Weather: <%= inv.weather %>
+        </p>
+    </div>
+
+    <div class="popularity">
+        <p>Popularity: <%= inv.popularity %>%</p>
+    </div>
+
+    <div class="reset">
+        <form action="/reset" method="post"><input type="submit" value="Reset Game"></form>
+        
     </div>
 
     <div class="help">
-        <input type="submit" value="Help">
+        <a href="/tutorial"><input type="submit" value="Help"></a>
+    </div>
+
+    <div class="day">
+        <p>Day <b>
+                <%= inv.day %>
+            </b> of <b>10</b></p>
     </div>
 </body>
 
