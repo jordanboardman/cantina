@@ -38,7 +38,7 @@ let simulate = (inv, bar) => {
     let vezeCredits = vezePurchased * bar.vezeprice;
     let totalCredits = vemoSpanuCredits + mozeSpanuCredits + vezeSpanuCredits + vemoCredits + mozeCredits + vezeCredits;
     let sweetTotal = vemoSpanuPurchased + mozeSpanuPurchased + vezeSpanuPurchased;
-    let popularity = inv.popularity + 5 + (Math.round(Math.random() * sweetTotal));
+    let popularity = inv.popularity + 5 + sweetTotal;
 
     let simObject = {
         varkro: varkro,

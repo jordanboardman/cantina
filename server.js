@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Global Variables
 
 let username = "";
+let gameOver = false;
 let simulation = {
   varkro: 0,
   ukrel: 0,
@@ -145,6 +146,7 @@ app.post("/reset", async (req, res) => {
       username: username
     }
   })
+  gameOver = false;
   const weatherChance = Math.random() * 100;
     if (weatherChance < 50){
       weather = 'Average'
@@ -189,6 +191,9 @@ app.post("/reset", async (req, res) => {
 app.get("/shop", async (req, res) => {
     if (username == ''){
       res.redirect("/")
+    }
+    if (gameOver == true){
+      res.redirect("/results")
     }
     else {
       let inv = await inventories.findOne({
@@ -453,6 +458,7 @@ app.post("/brewmozespanu", async (req, res) => {
         username: username,
       }
     });
+
   if (inv.mozuc > 0 && inv.zeyoc > 0 && inv.gloop > 0 && inv.spanu > 0){
     useMozuc = inv.mozuc - 1
     useZeyoc = inv.zeyoc - 1
@@ -569,6 +575,10 @@ app.post("/openbar", async (req, res) => {
   }
   else {
     weather = 'Cold'
+  }
+
+  if(day == 11){
+    gameOver = true;
   }
 
   inv.update({

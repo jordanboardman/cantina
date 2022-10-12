@@ -8,83 +8,20 @@
     <title>Results</title>
 </head>
 <body>
-    <div>
-        <a href="/shop"><input type="submit" id="readytobrew" value="On To Next Day"></a>
-    </div>
-
     <div class="username">
         <p><b><%= inv.username %></b>'s Cantina</p>
     </div>
 
+    <div class="credits">
+        <p>You earned <%= inv.credits %> credits!</p>
+    </div>
+
+    <div class="leaderboard">
+        Leaderboard goes here.
+    </div>
+
     <div class="logout">
         <form action="/logout" method="get"><input type="submit" value="Log Out"></form>
-    </div>
-
-    <div class='inventory'>
-        <h2>INVENTORY</h2>
-        <div id="shopinv">
-            <div class="subinv">
-                <p><b>Credits</b>: <%= inv.credits %>
-                </p>
-                <p><b>Gloop</b>: <%= inv.gloop %>
-                </p>
-                <p><b>Spanu</b>: <%= inv.spanu %>
-                </p>
-            </div>
-            <div class="subinv">
-                <p><b>Veax</b>: <%= inv.veax %>
-                </p>
-                <p><b>Mozuc</b>: <%= inv.mozuc %>
-                </p>
-                <p><b>Zeyoc</b>: <%= inv.zeyoc %>
-                </p>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="weather">
-        <p>Weather: <%= inv.weather %></p>
-    </div>
-
-    <div id="resultsboard">
-        <h2>BUSINESS TURNOUT</h2>
-
-        <div id="metrics">
-            <div id="drinkssold">
-                <h3>Drinks Sold</h3>
-                <p><b>Vemo</b>: </p>
-                <p><b>Moze</b>: </p>
-                <p><b>Veze</b>: </p>
-                <p><b>Vemo Spanu</b>: </p>
-                <p><b>Moze Spanu</b>: </p>
-                <p><b>Veze Spanu</b>: </p>
-                <p><b>Total</b>: </p>
-            </div>
-            <div id="profitmade">
-                <h3>Profit Made</h3>
-                <p><b>Vemo</b>: </p>
-                <p><b>Moze</b>: </p>
-                <p><b>Veze</b>: </p>
-                <p><b>Vemo Spanu</b>: </p>
-                <p><b>Moze Spanu</b>: </p>
-                <p><b>Veze Spanu</b>: </p>
-                <p><b>Total</b>: </p>
-            </div>
-        </div>
-
-        <div id="leaderboard">
-            <h3>Leaderboard</h3>
-            <p><b>1st</b>: </p>
-            <p><b>2nd</b>: </p>
-            <p><b>3rd</b>: </p>
-            <p><b>4th</b>: </p>
-            <p><b>5th</b>: </p>
-        </div>
-    </div>
-
-    <div class="popularity">
-        <p>Popularity: <%= inv.popularity %>%</p>
     </div>
 
     <div class="reset">
@@ -94,11 +31,6 @@
     <div class="help">
         <a href="/tutorial"><input type="submit" value="Help"></a>
     </div>
-
-    <div class="day">
-        <p>Day <b>
-                <%= inv.day %>
-            </b> of <b>10</b></p>
     </div>
 </body>
 </html>

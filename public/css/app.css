@@ -77,6 +77,18 @@ input {
   left: 5%;
 }
 
+.credits {
+  position: absolute;
+  left: 40%;
+  top: 5%;
+}
+
+.leaderboard {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+
 .weather {
   position: absolute;
   top: 5%;
